@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 33
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "zhaopeng.com.rtpplayer"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 /*        externalNativeBuild {
@@ -26,6 +26,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 /*    externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
@@ -34,10 +39,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    def appcompat_version = "1.6.1"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    implementation 'junit:junit:4.13.2'
 }

@@ -3,12 +3,13 @@ package zhaopeng.com.rtpplayer.ui;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -19,7 +20,7 @@ import zhaopeng.com.rtpplayer.rtpplayer.MediaType;
 import zhaopeng.com.rtpplayer.rtpplayer.RtpPlayer;
 import zhaopeng.com.rtpplayer.rtpplayer.VideoInfo;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends FragmentActivity
 {
     private static final String            TAG = "MainActivity";
     private static final int              port = 5000;
